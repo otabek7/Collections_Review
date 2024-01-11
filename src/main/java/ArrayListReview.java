@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class ArrayListReview {
     public static void main(String[] args) {
@@ -39,7 +36,28 @@ public class ArrayListReview {
         System.out.println("Printing with a Lambda Expression");
         students.forEach(student -> System.out.println(student));
 
+        //Sorting Elements in a List
+        System.out.println("Sorting elements via Collections");
+        Collections.sort(students, new sortByNameDescending());
+        System.out.println(students);
 
+
+    }
+
+    static class sortByIdDescending implements Comparator<Student>{
+
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o2.id-o1.id;
+        }
+    }
+
+    static class sortByNameDescending implements Comparator<Student>{
+
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o2.name.compareToIgnoreCase(o1.name);
+        }
     }
 
 }
