@@ -9,10 +9,10 @@ public class MapReview {
         map.put(2, "Moses");
         System.out.println(map.get(2));
 
-        System.out.println(findFirstNonRepeating("you are repeating yourself"));
+        System.out.println(findFirstNoneRepeating("you are repeating yourself"));
     }
 
-    public static Character findFirstNonRepeating(String str){
+    public static Character findFirstNoneRepeating(String str){
         Map<Character, Integer> map = new HashMap<>();
         //For counting char occurrences
         int count;
